@@ -164,27 +164,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Show loading elements quickly
   showElement(loadingText, 0);          
-  showElement(mainIcon, 200);         
+  showElement(mainIcon, 150);         
   subIcons.forEach((icon, idx) => {
-    showElement(icon, 400 + idx*100);  
+    showElement(icon, 300 + idx*80);  
   });
-  showElement(designerText, 800);    
+  showElement(designerText, 600);    
 
-  // Fast, smooth loading screen transition
+  // Ultra-fast, smooth loading screen transition
   setTimeout(() => {
-    loadingScreen.style.transition = 'opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+    loadingScreen.style.transition = 'opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
     loadingScreen.style.opacity = '0';
     setTimeout(() => {
       loadingScreen.style.display='none';
       // Ensure body and all content is visible
       document.body.style.opacity = '1';
       document.body.style.visibility = 'visible';
-      document.body.style.transition = 'opacity 0.4s ease';
-    }, 600);
+      document.body.style.transition = 'opacity 0.3s ease';
+    }, 500);
     if (mainPage) {
       mainPage.classList.add("visible");
     }
-  }, 1500);
+  }, 1000);
 });
 
 // Dark/Light Mode Toggle
