@@ -2548,16 +2548,16 @@ body.dark-mode .mobile-menu-list li a i {
         image-rendering: -webkit-optimize-contrast !important;
     }
     
-    /* Smooth, professional transitions */
+    /* Smooth, professional transitions - SAME AS DESKTOP */
     * {
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
     
-    /* Smooth reveal on scroll */
+    /* Smooth reveal on scroll - SAME AS DESKTOP */
     .reveal {
         opacity: 0 !important;
-        transform: translateY(30px) !important;
-        transition: opacity 0.6s ease, transform 0.6s ease !important;
+        transform: translateY(40px) !important;
+        transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
     
     .active-reveal {
@@ -2565,27 +2565,59 @@ body.dark-mode .mobile-menu-list li a i {
         transform: translateY(0) !important;
     }
     
-    /* Professional card transitions */
+    /* Professional card transitions - SAME AS DESKTOP */
     .project-card,
     .service-card,
     .cert-card {
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
     
-    /* Smooth hover effects */
+    /* Touch effects - SAME AS DESKTOP HOVER */
     .project-card:active {
-        transform: translateY(-5px) scale(1.02) !important;
-        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.25) !important;
+        transform: translateY(-8px) scale(1.03) !important;
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3) !important;
+    }
+    
+    .project-card:active .project-image {
+        transform: scale(1.1) !important;
     }
     
     .service-card:active {
+        transform: translateY(-8px) !important;
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3) !important;
+    }
+    
+    .cert-card:active {
+        transform: translateY(-10px) !important;
+        box-shadow: 0 20px 50px rgba(102, 126, 234, 0.35) !important;
+        border-color: #667eea !important;
+    }
+    
+    /* Expertise cards - SAME AS DESKTOP */
+    .expertise-card:active {
+        transform: translateY(-8px) scale(1.05) !important;
+        box-shadow: 0 12px 35px rgba(102, 126, 234, 0.3) !important;
+    }
+    
+    .expertise-card:active .expertise-icon {
+        transform: scale(1.2) rotate(10deg) !important;
+    }
+    
+    /* Timeline items - SAME AS DESKTOP */
+    .timeline-item:active {
         transform: translateY(-5px) !important;
         box-shadow: 0 10px 30px rgba(102, 126, 234, 0.25) !important;
     }
     
-    .cert-card:active {
-        transform: translateY(-8px) !important;
-        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3) !important;
+    /* Buttons - SAME AS DESKTOP */
+    .btn-home1:active, .btn-home2:active {
+        transform: translateY(-3px) scale(0.98) !important;
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
+    }
+    
+    /* Social icons - SAME AS DESKTOP */
+    .social-link:active, .follow ul a:active {
+        transform: translateY(-8px) scale(1.15) !important;
     }
 }
 
