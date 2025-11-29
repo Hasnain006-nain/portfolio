@@ -170,19 +170,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   showElement(designerText, 1100);    
 
-  // Hide loading screen automatically after 2 seconds
+  // Smooth loading screen transition
   setTimeout(() => {
+    loadingScreen.style.transition = 'opacity 0.8s ease';
     loadingScreen.style.opacity = '0';
     setTimeout(() => {
       loadingScreen.style.display='none';
       // Ensure body and all content is visible
       document.body.style.opacity = '1';
       document.body.style.visibility = 'visible';
-    }, 300);
+      document.body.style.transition = 'opacity 0.5s ease';
+    }, 800);
     if (mainPage) {
       mainPage.classList.add("visible");
     }
-  }, 2000);
+  }, 2500);
 });
 
 // Dark/Light Mode Toggle

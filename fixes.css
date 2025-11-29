@@ -2392,49 +2392,85 @@ body.dark-mode .mobile-menu-list li a i {
         align-items: center !important;
         background: #fff !important;
         border-radius: 16px !important;
-        padding: 25px 20px !important;
+        padding: 30px 25px !important;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
         margin: 0 auto 20px auto !important;
         max-width: 340px !important;
         width: 100% !important;
         text-align: center !important;
+        cursor: pointer !important;
+        position: relative !important;
+        overflow: hidden !important;
     }
     
     body.dark-mode .service-card {
         background: #2d2d2d !important;
     }
     
+    /* Gradient overlay on touch */
+    .service-card::before {
+        content: "" !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: -100% !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        transition: left 0.4s ease !important;
+        z-index: 0 !important;
+    }
+    
+    .service-card:active::before {
+        left: 0 !important;
+    }
+    
     .service-card img {
-        width: 80px !important;
-        margin-bottom: 15px !important;
-        order: 1 !important;
+        width: 90px !important;
+        margin-bottom: 18px !important;
+        position: relative !important;
+        z-index: 1 !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .service-card:active img {
+        filter: brightness(0) invert(1) !important;
+        transform: scale(1.1) !important;
     }
     
     .service-card h3 {
-        font-size: 18px !important;
+        font-size: 19px !important;
         color: #1e40af !important;
-        margin-bottom: 10px !important;
-        order: 2 !important;
+        margin-bottom: 12px !important;
+        font-weight: 700 !important;
+        position: relative !important;
+        z-index: 1 !important;
+        transition: color 0.3s ease !important;
     }
     
     body.dark-mode .service-card h3 {
         color: #667eea !important;
     }
     
+    .service-card:active h3 {
+        color: #fff !important;
+    }
+    
     .service-card p {
         font-size: 14px !important;
         color: #555 !important;
-        line-height: 1.6 !important;
-        margin-bottom: 15px !important;
-        order: 3 !important;
+        line-height: 1.7 !important;
+        margin-bottom: 0 !important;
+        position: relative !important;
+        z-index: 1 !important;
+        transition: color 0.3s ease !important;
     }
     
     body.dark-mode .service-card p {
         color: #b0b0b0 !important;
     }
     
-    .service-contact-btn {
-        order: 4 !important;
+    .service-card:active p {
+        color: #fff !important;
     }
 }
 
@@ -2490,7 +2526,7 @@ body.dark-mode .mobile-menu-list li a i {
 
 
 /* ========================================
-   PERFORMANCE OPTIMIZATIONS - SMOOTH & FAST
+   PERFORMANCE OPTIMIZATIONS - SMOOTH & PROFESSIONAL
    ======================================== */
 
 @media (max-width: 768px) {
@@ -2510,26 +2546,46 @@ body.dark-mode .mobile-menu-list li a i {
     /* Optimize images */
     img {
         image-rendering: -webkit-optimize-contrast !important;
-        image-rendering: crisp-edges !important;
     }
     
-    /* Reduce animation complexity */
+    /* Smooth, professional transitions */
     * {
-        animation-duration: 0.3s !important;
-        transition-duration: 0.3s !important;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
     
-    /* Disable expensive effects on scroll */
+    /* Smooth reveal on scroll */
     .reveal {
+        opacity: 0 !important;
+        transform: translateY(30px) !important;
+        transition: opacity 0.6s ease, transform 0.6s ease !important;
+    }
+    
+    .active-reveal {
         opacity: 1 !important;
         transform: translateY(0) !important;
     }
     
-    /* Simplify transitions */
+    /* Professional card transitions */
     .project-card,
     .service-card,
     .cert-card {
-        transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+    
+    /* Smooth hover effects */
+    .project-card:active {
+        transform: translateY(-5px) scale(1.02) !important;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.25) !important;
+    }
+    
+    .service-card:active {
+        transform: translateY(-5px) !important;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.25) !important;
+    }
+    
+    .cert-card:active {
+        transform: translateY(-8px) !important;
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3) !important;
     }
 }
 
