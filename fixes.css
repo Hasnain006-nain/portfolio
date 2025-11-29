@@ -1719,14 +1719,9 @@ body.dark-mode .mobile-menu-list li a i {
         transform: scale(1.15) !important;
     }
     
-    /* Project Icon - Float Animation */
+    /* Project Icon - Removed animation for performance */
     .project-icon {
-        animation: float-mobile 3s ease-in-out infinite !important;
-    }
-    
-    @keyframes float-mobile {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-8px); }
+        animation: none !important;
     }
     
     /* Service Cards - Slide Effect */
@@ -1840,14 +1835,9 @@ body.dark-mode .mobile-menu-list li a i {
         color: #764ba2 !important;
     }
     
-    /* Profile Images - Float Animation */
+    /* Profile Images - Removed animation for performance */
     .home img, .about img {
-        animation: float-profile 6s ease-in-out infinite !important;
-    }
-    
-    @keyframes float-profile {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-15px); }
+        animation: none !important;
     }
     
     .home img:active, .about img:active {
@@ -1927,15 +1917,7 @@ body.dark-mode .mobile-menu-list li a i {
         box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6) !important;
     }
     
-    /* Loading Screen Icons - Animate */
-    .main-icon, .sub-icons i {
-        animation: pulse-icon 2s ease-in-out infinite !important;
-    }
-    
-    @keyframes pulse-icon {
-        0%, 100% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.1); opacity: 0.8; }
-    }
+    /* Removed pulse animation for performance */
 }
 
 /* ========================================
@@ -1970,17 +1952,7 @@ body.dark-mode .mobile-menu-list li a i {
    ======================================== */
 
 @media (max-width: 768px) {
-    /* Animated gradient backgrounds */
-    .btn-home1, .service-contact-btn, .cert-link {
-        background-size: 200% 200% !important;
-        animation: gradient-shift 3s ease infinite !important;
-    }
-    
-    @keyframes gradient-shift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
+    /* Removed gradient animation for performance */
     
     /* Shimmer effect removed for better visibility */
 }
@@ -2513,5 +2485,75 @@ body.dark-mode .mobile-menu-list li a i {
     .cert-link {
         order: 4 !important;
         align-self: flex-start !important;
+    }
+}
+
+
+/* ========================================
+   PERFORMANCE OPTIMIZATIONS - SMOOTH & FAST
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* Hardware acceleration for smooth animations */
+    .project-card,
+    .service-card,
+    .cert-card,
+    .btn,
+    .btn-home1,
+    .btn-home2 {
+        will-change: transform !important;
+        transform: translateZ(0) !important;
+        backface-visibility: hidden !important;
+        -webkit-font-smoothing: antialiased !important;
+    }
+    
+    /* Optimize images */
+    img {
+        image-rendering: -webkit-optimize-contrast !important;
+        image-rendering: crisp-edges !important;
+    }
+    
+    /* Reduce animation complexity */
+    * {
+        animation-duration: 0.3s !important;
+        transition-duration: 0.3s !important;
+    }
+    
+    /* Disable expensive effects on scroll */
+    .reveal {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+    
+    /* Simplify transitions */
+    .project-card,
+    .service-card,
+    .cert-card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    }
+}
+
+/* ========================================
+   REMOVE LAG - OPTIMIZE TOUCH EVENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* Fast tap response */
+    * {
+        -webkit-tap-highlight-color: rgba(0,0,0,0.1) !important;
+        touch-action: manipulation !important;
+    }
+    
+    /* Prevent scroll lag */
+    body {
+        -webkit-overflow-scrolling: touch !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* Optimize scroll performance */
+    .projects-container,
+    .services-container,
+    .certifications-container {
+        contain: layout style paint !important;
     }
 }
