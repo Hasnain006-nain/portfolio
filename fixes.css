@@ -1156,7 +1156,8 @@ body.dark-mode .footer-social a {
         letter-spacing: 2px !important;
         font-weight: 600 !important;
         color: #667eea !important;
-        margin-bottom: 10px !important;
+        margin-bottom: 8px !important;
+        margin-top: -10px !important;
         display: block !important;
         text-transform: uppercase !important;
     }
