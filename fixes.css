@@ -1147,7 +1147,19 @@ body.dark-mode .footer-social a {
 
 @media (max-width: 768px) {
     /* Section Labels (PROJECTS, SERVICES, etc.) */
-    .project > p:first-child,
+    .project > p:first-child {
+        font-size: 11px !important;
+        text-align: center !important;
+        letter-spacing: 2px !important;
+        font-weight: 600 !important;
+        color: #667eea !important;
+        margin-bottom: 8px !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        display: block !important;
+        text-transform: uppercase !important;
+    }
+    
     .services > p:first-child,
     .certifications > p:first-child,
     .contact > p:first-child {
@@ -1157,7 +1169,7 @@ body.dark-mode .footer-social a {
         font-weight: 600 !important;
         color: #667eea !important;
         margin-bottom: 8px !important;
-        margin-top: -10px !important;
+        margin-top: 0 !important;
         display: block !important;
         text-transform: uppercase !important;
     }
@@ -1373,7 +1385,7 @@ body.dark-mode .mobile-menu-list li a i {
 
 @media (max-width: 768px) {
     /* All sections visible and properly spaced */
-    .home, .about, .project, .services, .certifications, .contact {
+    .home, .about, .services, .certifications, .contact {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
@@ -1382,10 +1394,21 @@ body.dark-mode .mobile-menu-list li a i {
         text-align: center !important;
     }
     
+    /* Projects section - closer to home */
+    .project {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin: 40px 25px 80px 25px !important;
+        padding: 20px 0 !important;
+        text-align: center !important;
+    }
+    
     /* First section - more top space for menu button */
     .home {
         margin-top: 100px !important;
         padding-top: 20px !important;
+        margin-bottom: 40px !important;
     }
     
     /* Last section - more bottom space */
