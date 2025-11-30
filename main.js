@@ -162,28 +162,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }, delay);
   }
 
-  // Show loading elements quickly
-  // Fast, smooth loading - 1.5 seconds total
-  showElement(loadingText, 0);          
-  showElement(mainIcon, 200);         
+  // Smooth sequential animation
+  showElement(mainIcon, 0);           // Laptop icon appears first
+  showElement(loadingText, 300);      // "MY PROFILE" appears
   subIcons.forEach((icon, idx) => {
-    showElement(icon, 400 + idx*100);  
+    showElement(icon, 600 + idx*150); // Sub icons appear one by one
   });
-  showElement(designerText, 800);    
+  showElement(designerText, 1200);    // "Designed by Hasnain Haider" appears
   
-  // Redirect after 1.5 seconds
+  // Pause for 1.5 seconds on designer text, then fade out (total: 2.7s + 1.5s = 4.2s)
   setTimeout(() => {
-    loadingScreen.style.transition = 'opacity 0.5s ease';
+    loadingScreen.style.transition = 'opacity 0.6s ease';
     loadingScreen.style.opacity = '0';
     setTimeout(() => {
       loadingScreen.style.display='none';
       document.body.style.opacity = '1';
       document.body.style.visibility = 'visible';
-    }, 500);
+    }, 600);
     if (mainPage) {
       mainPage.classList.add("visible");
     }
-  }, 1500);
+  }, 2700); // 1.2s (last element) + 1.5s pause
 });
 
 // Dark/Light Mode Toggle

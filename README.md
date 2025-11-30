@@ -35,7 +35,7 @@ portfolio/
 
 **[👉 View Live Demo](https://portfolio-red-two-21.vercel.app/)**
 
-![Portfolio Preview](https://raw.githubusercontent.com/Hasnain006-nain/portfolio/main/cp.png)
+![Portfolio Preview](images/HOME.png)
 
 Experience the portfolio in action! Click the link above to explore the live website with all its interactive features, smooth animations, and responsive design.
 
