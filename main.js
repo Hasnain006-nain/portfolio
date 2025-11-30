@@ -164,27 +164,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Show loading elements quickly
   showElement(loadingText, 0);          
-  showElement(mainIcon, 250);         
+  showElement(mainIcon, 300);         
   subIcons.forEach((icon, idx) => {
-    showElement(icon, 500 + idx*120);  
+    showElement(icon, 600 + idx*150);  
   });
-  showElement(designerText, 1000);    
+  showElement(designerText, 1200);    
 
-  // Professional, smooth loading screen transition
+  // Professional loading - longer on desktop, shorter on mobile
+  const isMobile = window.innerWidth <= 768;
+  const loadingDuration = isMobile ? 2000 : 3000;
+  
   setTimeout(() => {
-    loadingScreen.style.transition = 'opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1)';
+    loadingScreen.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
     loadingScreen.style.opacity = '0';
     setTimeout(() => {
       loadingScreen.style.display='none';
-      // Ensure body and all content is visible
       document.body.style.opacity = '1';
       document.body.style.visibility = 'visible';
       document.body.style.transition = 'opacity 0.5s ease';
-    }, 700);
+    }, 800);
     if (mainPage) {
       mainPage.classList.add("visible");
     }
-  }, 2000);
+  }, loadingDuration);
 });
 
 // Dark/Light Mode Toggle
