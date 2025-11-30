@@ -33,7 +33,11 @@ portfolio/
 
 ## 🚀 Live Demo
 
-Coming soon...
+**[👉 View Live Demo](https://stalwart-baklava-8ed433.netlify.app/)**
+
+![Portfolio Preview](cp.png)
+
+Experience the portfolio in action! Click the link above to explore the live website with all its interactive features, smooth animations, and responsive design.
 
 ## 📧 Contact
 
